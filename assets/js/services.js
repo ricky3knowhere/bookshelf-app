@@ -29,7 +29,7 @@ const saveBook = async () => {
   bookData.id = new Date().getTime();
   bookData.title = title.value;
   bookData.author = author.value;
-  bookData.year = year.value;
+  bookData.year = parseInt(year.value);
   bookData.isComplete = isComplete.checked;
   getData.push(bookData);
   localStorage.setItem("booksData", JSON.stringify(getData));
@@ -48,7 +48,7 @@ const updateBook = (id) => {
 
   bookData.title = title.value;
   bookData.author = author.value;
-  bookData.year = year.value;
+  bookData.year = parseInt(year.value);
 
   tempBooksData.push(bookData);
 
